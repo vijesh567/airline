@@ -24,7 +24,7 @@ const Home=()=> {
     })
   
     const fetchData = async () => {
-      const res=await axios.get('http://localhost:8080/retrieve_flight');
+      const res=await axios.get('https://airline-api.onrender.com/retrieve_flight');
       const dataWithSno = res.data.map((item, index) => ({ ...item, Sno: index + 1 }));
         
           setRows(dataWithSno)
@@ -38,14 +38,14 @@ const Home=()=> {
   
     const updateData = async (id) => {
       console.log(id)
-      const res = await axios.put(`http://localhost:8080/users/${id}`, formData)
+      const res = await axios.put(`https://airline-api.onrender.com/${id}`, formData)
       fetchData()
       console.log(res.data)
     }
-  
+    https://airline-api.onrender.com
     const deleteData = async (id) => {
       console.log(id)
-      const res = await axios.delete(`http://localhost:8080/users/${id}`)
+      const res = await axios.delete(`https://airline-api.onrender.com/users/${id}`)
       fetchData()
       console.log(res.data)
     }
